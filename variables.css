@@ -1,7 +1,7 @@
 :root {
     --page-bg: #f7faff;
-    --bg-image-url : url(stacked-peaks-computers.svg);
-    --bg-image-mobile-url : url(stacked-peaks-mobiles.svg);
+    --bg-image-url : url(SVGs/stacked-peaks-computers.svg);
+    --bg-image-mobile-url : url(SVGs/stacked-peaks-mobiles.svg);
 
     --paragraph : #000000;
     --placeholder : #888;
@@ -18,6 +18,7 @@
     --projects-btn-text: #000000;
     --projects-btn-border: #000000;
     --projects-btn-hover: #1a73e8;
+    --skills-title: #517bcb;
 
     /* Projects */
     --projects-title: #2f4d7a;
@@ -57,8 +58,8 @@
 
 .dark-mode {
     --page-bg: #0e1422;
-    --bg-image-url : url(stacked-peaks-computers-dark-mode.svg);
-    --bg-image-mobile-url : url(stacked-peaks-mobiles-dark-mode.svg);
+    --bg-image-url : url(SVGs/stacked-peaks-computers-dark-mode.svg);
+    --bg-image-mobile-url : url(SVGs/stacked-peaks-mobiles-dark-mode.svg);
 
     --paragraph : #ffffff;
     --placeholder : #bacfffcc;

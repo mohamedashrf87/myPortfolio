@@ -72,7 +72,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: clamp(20px, 6vw, 150px);
+    padding: clamp(20px, 6vw, 150px);
 }
 .about-title {
     color: var(--about-title);
