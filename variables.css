@@ -1,6 +1,9 @@
 :root {
     --page-bg: #f7faff;
+    --bg-image-url : url(stacked-peaks-computers.svg);
+    --bg-image-mobile-url : url(stacked-peaks-mobiles.svg);
 
+    --paragraph : #000000;
     /* Intro / buttons */
     --intro-name-accent: #425e91;
     --btn-text: #ffffff;
@@ -53,7 +56,10 @@
 
 .dark-mode {
     --page-bg: #0e1422;
+    --bg-image-url : url(stacked-peaks-computers-dark-mode.svg);
+    --bg-image-mobile-url : url(stacked-peaks-mobiles-dark-mode.svg);
 
+    --paragraph : #ffffff;
     /* Intro / buttons */
     --intro-name-accent: #9bb6ff;
     --about-me-btn-bg: #3a445b;

@@ -13,18 +13,31 @@
     align-items: flex-start;
   }
 
-  .project-list{
-    grid-template-columns: 1fr;
+  .project-list {
+    position: absolute;
+    top: 25%;
+    transform: translateY(-50%, -50%);
+    width: 100vw;
+    margin-top: auto;
+    grid-template-columns: repeat(2, 1fr);
+    height: min-content;
+    overflow-x: scroll;
+  }
+
+  .project-container {
+    min-width: 60vw;
+
   }
 
   .contact-wrapper{
     flex-direction: column;
-    align-items: center;
-    text-align: left;
   }
 
-  .contact-submit{
-    width: clamp(200px, 60vw, 360px);
+  .contact-form {
+    width: calc(100% - clamp(20px, 5vw, 40px));
+  }
+  .contact-submit {
+    width: calc(100% + 20px);
   }
 }
 
@@ -34,10 +47,25 @@
     display: none;
   }
 
+  .mobile-menu-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .theme-toggle {
+    position: fixed;
+    right: 20px;
+  }
+
+  .theme-toggle, .theme-toggle svg{
+    width: 35px;
+    height: 35px;
+  }
+
   .home{
     padding-left: clamp(20px, 5vw, 40px);
     align-items: flex-start;
-    background-image: none;
+    background-image: var(--bg-image-mobiles-url);
     background-color: #e8f1fe;
   }
 
@@ -60,13 +88,6 @@
   .contact-header{
     padding-top: 80px;
   }
-
-  .contact-form {
-    width: calc(100% - clamp(20px, 5vw, 40px));
-  }
-  .contact-submit {
-    width: 100%;
-  }
 }
 
 /* <= 576px (phones) */
@@ -85,9 +106,5 @@
 @media (max-width: 400px){
   .contact-header div{
     width: 100px;
-  }
-
-  .theme-toggle{
-    right: 12px;
   }
 }
