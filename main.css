@@ -124,9 +124,9 @@ body {
         transform: translateY(-3px);
         color: var(--projects-btn-hover);
     }
-}
-#projects-btn:hover svg g path {
-    stroke: var(--projects-btn-hover);
+    #projects-btn:hover svg g path {
+        stroke: var(--projects-btn-hover);
+    }
 }
 .skills-title {
     margin-top: clamp(18px, 3vw, 30px);
