@@ -43,45 +43,82 @@
 
 /* <= 768px (large phones / small tablets) */
 @media (max-width: 768px){
-  .navbar, .contact-svg {
-    display: none;
+  .navbar {
+    position: fixed;
+    top: 60px;
+    left: 5px;
+    padding: 20px 20px 20px 0px;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    background-color: var(--mobile-menu-bg);
+
+    display: flex;
+    flex-direction: column;
+
+    transform: translateX(-120%);
+    opacity: 0;
+
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    z-index: 1000;
+  }
+  .navbar.active {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  .navbar p {
+    padding-left: 20px;
   }
 
-  .mobile-menu-icon {
+  .navbar p.active {
+    border-left: 3px solid var(--navbar-active);
+  }
+
+  .mobile-menu-icon,
+  .exit-menu {
     width: 50px;
     height: 50px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .mobile-menu-icon.active,
+  .exit-menu.active {
+    display: block;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .mobile-menu-icon:hover,
+  .exit-menu:hover {
+    transform: scale(1.1);
   }
 
   .mobile-menu-icon g path {
     stroke: var(--theme-toggle-icon);
   }
 
+  .exit-menu g path {
+    fill: var(--theme-toggle-icon);
+  }
+
+
   .theme-toggle {
     position: fixed;
     right: 20px;
     top: 15px;
   }
-
   .theme-toggle, .theme-toggle svg{
     width: 35px;
     height: 35px;
   }
-
   .home{
     padding-left: clamp(20px, 5vw, 40px);
     align-items: flex-start;
     background-image: var(--bg-image-mobile-url);
     background-color: #e8f1fe;
   }
-
-  .projects-title {
-    padding-top: 15px;
-  }
-
-  .contact-wrapper{
-    padding: clamp(20px, 5vw, 40px);
-  }
-
   .intro-buttons{
     flex-direction: column;
     width: calc(100% - clamp(20px, 5vw, 40px));
@@ -89,11 +126,18 @@
   .intro-buttons button{
     width: 100%;
   }
-
   .about{
     padding-left: clamp(20px, 5vw, 40px);
   }
-
+  .projects-title {
+    padding-top: 15px;
+  }
+  .contact-wrapper{
+    padding: clamp(20px, 5vw, 40px);
+  }
+  .contact-svg {
+    display: none;
+  }
   .contact-header{
     padding-top: 80px;
   }

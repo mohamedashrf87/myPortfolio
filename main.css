@@ -57,9 +57,11 @@ body {
 }
 #about-me-btn { background-color: var(--about-me-btn-bg); }
 #contact-btn  { background-color: var(--contact-btn-bg); }
-.intro-buttons button:hover {
+@media (hover: hover) and (pointer: fine) {
+  .intro-buttons button:hover {
     transform: translateY(-3px) scale(1.03);
     box-shadow: 0 6px 15px var(--shadow-15);
+  }
 }
 #about-me-btn:hover {
     background-color: var(--about-me-btn-bg-hover);
@@ -373,4 +375,7 @@ body {
   opacity: 1;
   transform: scale(1);
   pointer-events: auto;
+}
+.mobile-menu-icon, .exit-menu {
+    display: none;
 }

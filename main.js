@@ -30,6 +30,25 @@ function setActive(navId) {
   document.getElementById(navId).classList.add("active");
 }
 
+// Mobile Menu toggle
+const menuIcon = document.getElementById('menu-icon');
+const exitMenu = document.getElementById('exit-menu');
+const navbar = document.querySelector('.navbar');
+if (menuIcon) {
+  menuIcon.addEventListener('click', () => {
+    menuIcon.classList.remove('active');
+    navbar.classList.add('active');
+    exitMenu.classList.add('active');
+  });
+}
+if (exitMenu) {
+  exitMenu.addEventListener('click', () => {
+    menuIcon.classList.add('active');
+    navbar.classList.remove('active');
+    exitMenu.classList.remove('active');
+  });
+}
+
 const navMap = {
   navigateHome: "home",
   navigateAbout: "about",
@@ -47,11 +66,11 @@ document.getElementById("about-me-btn").addEventListener("click", () => {
   scrollToNextSection();
 });
 
-document.getElementById("contact-btn").addEventListener("click", () => {
+document.getElementById("contact-btn").addEventListener("click", (event) => {
   scrollToSectionById("contact");
 });
 
-document.getElementById("projects-btn").addEventListener("click", () => {
+document.getElementById("projects-btn").addEventListener("click", (event) => {
   scrollToSectionById("projects");
 });
 

@@ -5,6 +5,7 @@
 
     --paragraph : #000000;
     --placeholder : #888;
+    --mobile-menu-bg : #e8f0ff;
     /* Intro / buttons */
     --intro-name-accent: #425e91;
     --btn-text: #ffffff;
@@ -63,6 +64,7 @@
 
     --paragraph : #ffffff;
     --placeholder : #bacfffcc;
+    --mobile-menu-bg : #0d1117;
     /* Intro / buttons */
     --intro-name-accent: #9bb6ff;
     --about-me-btn-bg: #3a445b;
