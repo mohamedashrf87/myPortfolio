@@ -65,7 +65,7 @@
   .home{
     padding-left: clamp(20px, 5vw, 40px);
     align-items: flex-start;
-    background-image: var(--bg-image-mobiles-url);
+    background-image: var(--bg-image-mobile-url);
     background-color: #e8f1fe;
   }
 

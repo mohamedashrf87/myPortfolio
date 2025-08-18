@@ -178,6 +178,7 @@ body {
     color: var(--project-title);
 }
 .project-description {
+    color: var(--paragraph);
     font-size: clamp(1rem, 2.6vw, 1.4rem);
 }
 .project-tech {
@@ -255,7 +256,7 @@ body {
     box-shadow: var(--shadow-16) 0px 1px 4px;
 }
 #contact-name::placeholder,#contact-email::placeholder,#contact-message::placeholder {
-    color: #888;
+    color: var(--placeholder);
 }
 .contact-submit {
     margin-top: 20px;

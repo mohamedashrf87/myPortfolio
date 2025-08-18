@@ -4,6 +4,7 @@
     --bg-image-mobile-url : url(stacked-peaks-mobiles.svg);
 
     --paragraph : #000000;
+    --placeholder : #888;
     /* Intro / buttons */
     --intro-name-accent: #425e91;
     --btn-text: #ffffff;
@@ -60,6 +61,7 @@
     --bg-image-mobile-url : url(stacked-peaks-mobiles-dark-mode.svg);
 
     --paragraph : #ffffff;
+    --placeholder : #bacfffcc;
     /* Intro / buttons */
     --intro-name-accent: #9bb6ff;
     --about-me-btn-bg: #3a445b;
