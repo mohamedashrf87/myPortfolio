@@ -68,11 +68,9 @@
   .navbar p {
     padding-left: 20px;
   }
-
   .navbar p.active {
     border-left: 3px solid var(--navbar-active);
   }
-
   .mobile-menu-icon,
   .exit-menu {
     width: 50px;
@@ -82,28 +80,22 @@
     pointer-events: none;
     transition: transform 0.3s ease, opacity 0.3s ease;
   }
-
   .mobile-menu-icon.active,
   .exit-menu.active {
     display: block;
     opacity: 1;
     pointer-events: auto;
   }
-
   .mobile-menu-icon:hover,
   .exit-menu:hover {
     transform: scale(1.1);
   }
-
   .mobile-menu-icon g path {
     stroke: var(--theme-toggle-icon);
   }
-
   .exit-menu g path {
     fill: var(--theme-toggle-icon);
   }
-
-
   .theme-toggle {
     position: fixed;
     right: 20px;
@@ -128,6 +120,9 @@
   }
   .about{
     padding-left: clamp(20px, 5vw, 40px);
+  }
+  #projects-btn p {
+    transform: translateY(5px);
   }
   .projects-title {
     padding-top: 15px;

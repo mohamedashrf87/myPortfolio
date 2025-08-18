@@ -109,19 +109,21 @@ body {
 #projects-btn svg g path {
     stroke: var(--projects-btn-text);
 }
-#projects-btn::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -2px;
-    width: 0;
-    height: 2px;
-    background-color: var(--projects-btn-border);
-    transition: width 0.3s ease;
-}
-#projects-btn:hover {
-    transform: translateY(-3px);
-    color: var(--projects-btn-hover);
+@media (hover: hover) and (pointer: fine) {
+    #projects-btn::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 0;
+        height: 2px;
+        background-color: var(--projects-btn-border);
+        transition: width 0.3s ease;
+    }
+    #projects-btn:hover {
+        transform: translateY(-3px);
+        color: var(--projects-btn-hover);
+    }
 }
 #projects-btn:hover svg g path {
     stroke: var(--projects-btn-hover);
@@ -145,11 +147,12 @@ body {
     border-radius: 5px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
-.python {background-color: #4CAF50; color: #FFFFFF;}
+.python {background-color: #4CAF50; color: #000000;}
 .django {background-color: #092E20; color: #FFFFFF;}
 .flask {background-color: #000000; color: #FFFFFF;}
-.api {background-color: #FF5722; color: #FFFFFF;}
-.mysql {background-color: #00758F; color: #FFFFFF;}
+.api {background-color: #FF5722; color: #000000;}
+.mysql {background-color: #00758F; color: #000000;}
+.sqlite {background-color: #003B57; color: #FFFFFF;}
 .html {background-color: #3498DB; color: #000000;}
 .css {background-color: #FF6F61; color: #000000;}
 .tailwind {background-color: #06B6D4; color: #000000;}
