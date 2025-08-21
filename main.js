@@ -1,3 +1,11 @@
+(function () {
+  const setVH = () => {
+    document.documentElement.style.setProperty('--vh', window.innerHeight * 0.01 + 'px');
+  };
+  setVH();
+  window.addEventListener('resize', setVH);
+})();
+
 const themeToggle = document.getElementById("theme-toggle");
 const sunIcon = document.getElementById("light-sun");
 const moonIcon = document.getElementById("dark-moon");
@@ -128,10 +136,10 @@ function animateBlob() {
     onComplete: () => {
       gsap.to(blob, {
         duration: 5,
-        delay: 1,
+        delay: 0,
         attr: { d: shape1 },
         ease: "power1.inOut",
-        delay: 1,
+        delay: 0,
         onComplete: animateBlob
       });
     }

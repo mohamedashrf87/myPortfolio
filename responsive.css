@@ -1,6 +1,9 @@
-@media (max-width: 1400px){
-  .about, .home, .project-list, .contact-wrapper {
-    padding: clamp(14px, 3vw, 30px);
+@media (max-width: 1300px){
+  .theme-toggle {
+    right: 25px;
+  }
+  .about, .home, .contact-wrapper, .topbar{
+    padding: 25px;
   }
   .about-title, .skills-title {
     margin-top: clamp(5px, 2vh, 20px);
@@ -13,47 +16,51 @@
   .contact-subtitle {
     font-size: clamp(1.05rem, 2.2vw, 1.8rem);
   }
-}
-@media (max-width: 1200px){
-  .project-list{
-    grid-template-columns: repeat(2, 1fr);
+
+  .projects, .project-list {
+    padding: 12.5px;
   }
-  .contact-wrapper{
-    gap: clamp(40px, 10vw, 160px);
+  .project-list {
+    margin-top: auto;
+    margin-bottom: auto;
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scroll-padding: 12.5px;
   }
-  .contact-svg {
-    display: none;
+  .project-container {
+    min-width: calc(50% - 50px);
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
   }
+  .project-tech {flex-direction: column;
+  }
+  .contact-svg {display: none;}
 }
 
 /* <= 992px (tablets) */
 @media (max-width: 992px){
-  .project-list {
-    position: absolute;
-    top: 25%;
-    transform: translateY(-50%, -50%);
-    width: 100vw;
-    margin-top: auto;
-    grid-template-columns: repeat(2, 1fr);
-    height: min-content;
-    overflow-x: scroll;
-  }
-  .project-container {
-    min-width: 60vw;
-  }
-  .contact-wrapper{
+  .contact-form {width: calc(100% - clamp(20px, 5vw, 40px));}
+  .contact-submit {width: calc(100% + 20px);}
+  .home-bg{display: none;}
+  .mobile-home-bg{display: block;}
+  .intro-buttons{
     flex-direction: column;
-  }
-  .contact-form {
     width: calc(100% - clamp(20px, 5vw, 40px));
   }
-  .contact-submit {
-    width: calc(100% + 20px);
-  }
+  .intro-buttons button{width: 100%;}
 }
 
 /* <= 768px (large phones / small tablets) */
 @media (max-width: 768px){
+  .about, .home, .contact-wrapper, .topbar{padding: 20px;}
+  .projects, .project-list {padding: 10px;}
+  .project-list {scroll-padding: 10px;}
+  .project-container {min-width: calc(100% - 40px);}
+
   .navbar {
     position: fixed;
     top: 60px;
@@ -62,13 +69,10 @@
     font-size: 1.2rem;
     border-radius: 10px;
     background-color: var(--mobile-menu-bg);
-
     display: flex;
     flex-direction: column;
-
     transform: translateX(-120%);
     opacity: 0;
-
     transition: transform 0.4s ease, opacity 0.4s ease;
     z-index: 1000;
   }
@@ -90,6 +94,7 @@
     opacity: 0;
     pointer-events: none;
     transition: transform 0.3s ease, opacity 0.3s ease;
+    transform: translate(-5px, -5px);
   }
   .mobile-menu-icon.active,
   .exit-menu.active {
@@ -116,30 +121,13 @@
     width: 35px;
     height: 35px;
   }
-  .home{
-    padding-left: clamp(20px, 5vw, 40px);
-    align-items: flex-start;
-    background-image: var(--bg-image-mobile-url);
-    background-color: #e8f1fe;
-  }
-  .intro-buttons{
-    flex-direction: column;
-    width: calc(100% - clamp(20px, 5vw, 40px));
-  }
-  .intro-buttons button{
-    width: 100%;
-  }
-  .about{
-    padding-left: clamp(20px, 5vw, 40px);
-  }
+
+
   #projects-btn p {
     transform: translateY(5px);
   }
   .projects-title {
     padding-top: 15px;
-  }
-  .contact-wrapper{
-    padding: clamp(20px, 5vw, 40px);
   }
   .contact-header{
     padding-top: 80px;
@@ -148,18 +136,13 @@
 
 /* <= 576px (phones) */
 @media (max-width: 576px){
-  .topbar{
-    font-size: clamp(0.95rem, 3.2vw, 1.1rem);
-  }
-
-  .home{
-    background-position: center;
-    background-size: cover;
-  }
 }
 
 /* <= 400px (small phones) */
 @media (max-width: 400px){
+  .about-title {
+    margin-top: 50px;
+  }
   .contact-header div{
     width: 100px;
   }

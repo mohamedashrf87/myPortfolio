@@ -1,117 +1,124 @@
 :root {
-    --page-bg: #f7faff;
-    --bg-image-url : url(SVGs/stacked-peaks-computers.svg);
-    --bg-image-mobile-url : url(SVGs/stacked-peaks-mobiles.svg);
+  --page-bg:           #F9FAFB;   /* clean, modern background */
+  --peak1:             #F1F3F5;
+  --peak2:             #E9ECEF;
+  --peak3:             #DEE2E6;
+  --peak4:             #ADB5BD;
+  
+  --paragraph:         #212529;   /* strong, clear readability */
+  --placeholder:       #6C757D;
+  --mobile-menu-bg:    #F1F3F5;
 
-    --paragraph : #000000;
-    --placeholder : #888;
-    --mobile-menu-bg : #e8f0ff;
-    /* Intro / buttons */
-    --intro-name-accent: #425e91;
-    --btn-text: #ffffff;
-    --about-me-btn-bg: #3f4759;
-    --about-me-btn-bg-hover: #4c5569;
-    --contact-btn-bg: #294677;
-    --contact-btn-bg-hover: #34568b;
+  /* Buttons & Highlights (Blue Palette) */
+  --intro-name-accent:       #2563EB;  /* confident vivid blue */
+  --btn-text:                #FFFFFF;
+  --about-me-btn-bg:         #2563EB;  /* solid base blue */
+  --about-me-btn-bg-hover:   #1E40AF;  /* bold darker hover */
+  --contact-btn-bg:          #3B82F6;  /* lighter accent blue */
+  --contact-btn-bg-hover:    #2563EB;
 
-    /* About + Projects CTA */
-    --about-title: #2f4d7a;
-    --projects-btn-text: #000000;
-    --projects-btn-border: #000000;
-    --projects-btn-hover: #1a73e8;
-    --skills-title: #517bcb;
+  /* Section Titles & CTAs */
+  --about-title:             #2563EB;
+  --projects-btn-text:       #212529;
+  --projects-btn-hover:      #1E40AF;
+  --skills-title:            #3B82F6;
 
-    /* Projects */
-    --projects-title: #2f4d7a;
-    --card-bg: #ffffff;
-    --project-title: #3e4759;
-    --github-link: #705575;
+  /* Projects Section */
+  --projects-title:          #2563EB;
+  --card-bg:                 #FFFFFF;
+  --project-title:           #212529;
+  --github-link:             #2563EB;
 
-    /* Contact */
-    --contact-divider: #aac7ff;
-    --contact-header: #415f91;
-    --contact-title: #284777;
-    --contact-subtitle: #3e4759;
-    --input-bg: #ffffff;
-    --input-text: #3e4759;
-    --input-outline: #284777;
-    --submit-bg: #284777;
-    --submit-text: #ffffff;
+  /* Contact Section */
+  --contact-divider:         #E9ECEF;
+  --contact-header:          #2563EB;
+  --contact-title:           #1E40AF;
+  --contact-subtitle:        #3B82F6;
+  --input-bg:                #FFFFFF;
+  --input-text:              #212529;
+  --input-outline:           #2563EB;
+  --submit-bg:               #2563EB;
+  --submit-text:             #FFFFFF;
 
-    /* Contact SVG animation */
-    --contact-fill-0: #284777;
-    --contact-fill-50: #335c94;
-    --contact-fill-100: #1e3655;
+  /* SVG Animation */
+  --contact-fill-0:          #2563EB;
+  --contact-fill-50:         #3B82F6;
+  --contact-fill-100:        #60A5FA;
 
-    /* Footer */
-    --footer-bg: #565f71;
-    --footer-text: #ffffff;
-    --footer-name: #aac7ff;
-    --footer-subtitle: #ffffff;
-    --footer-icon-fill: #ffffff;
+  /* Footer */
+  --footer-bg:               #F1F3F5;
+  --footer-text:             #212529;
+  --footer-name:             #2563EB;
+  --footer-subtitle:         #3B82F6;
+  --footer-icon-fill:        #2563EB;
 
-    /* Nav + Theme toggle */
-    --navbar-text: #3e4759;
-    --navbar-active: #284777;
-    --theme-toggle-bg: #d6e3ff;
-    --theme-toggle-icon: #284777;
+  /* Navbar & Theme Toggle */
+  --navbar-text:             #212529;
+  --navbar-active:           #2563EB;
+  --theme-toggle-bg:         #E9ECEF;
+  --theme-toggle-icon:       #2563EB;
 }
 
 .dark-mode {
-    --page-bg: #0e1422;
-    --bg-image-url : url(SVGs/stacked-peaks-computers-dark-mode.svg);
-    --bg-image-mobile-url : url(SVGs/stacked-peaks-mobiles-dark-mode.svg);
+  --page-bg:          #0F172A;  /* deep, modern navy */
+  --peak1:            #1E293B;
+  --peak2:            #334155;
+  --peak3:            #475569;
+  --peak4:            #94A3B8;
 
-    --paragraph : #ffffff;
-    --placeholder : #bacfffcc;
-    --mobile-menu-bg : #0d1117;
-    /* Intro / buttons */
-    --intro-name-accent: #9bb6ff;
-    --about-me-btn-bg: #3a445b;
-    --about-me-btn-bg-hover: #4a5673;
-    --contact-btn-bg: #335c94;
-    --contact-btn-bg-hover: #3f6db8;
+  --paragraph:        #F9FAFB;
+  --placeholder:      #CBD5E1;
+  --mobile-menu-bg:   #1E293B;
 
-    /* About + Projects CTA */
-    --about-title: #cfd8ea;
-    --projects-btn-text: #e2e8f0;
-    --projects-btn-border: #e2e8f0;
-    --projects-btn-hover: #8ab4f8;
-    --skills-title: #9db9ff;
+  /* Buttons & Highlights */
+  --intro-name-accent:    #60A5FA;
+  --about-me-btn-bg:      #2563EB;
+  --about-me-btn-bg:      #3B82F6;
+  --about-me-btn-bg-hover:#1E40AF;
+  --about-me-btn-bg-hover:#60A5FA;
+  --contact-btn-bg:       #3B82F6;
+  --contact-btn-bg-hover: #60A5FA;
 
-    /* Projects */
-    --projects-title: #cfd8ea;
-    --card-bg: #15233a;
-    --project-title: #d3d9e9;
-    --github-link: #c7a7d7;
+  /* Section Titles & CTAs */
+  --about-title:         #60A5FA;
+  --projects-btn-text:   #F9FAFB;
+  --projects-btn-hover:  #3B82F6;
+  --skills-title:        #3B82F6;
 
-    /* Contact */
-    --contact-divider: #2a3f66;
-    --contact-header: #cfd8ea;
-    --contact-title: #9bb6ff;
-    --contact-subtitle: #a8b3c7;
-    --input-bg: #0f1b2e;
-    --input-text: #e6ecff;
-    --input-outline: #3d6fc4;
-    --submit-bg: #335c94;
-    --submit-text: #ffffff;
+  /* Projects Section */
+  --projects-title:       #60A5FA;
+  --card-bg:              #1E293B;
+  --project-title:        #F9FAFB;
+  --github-link:          #60A5FA;
 
-    /* Contact SVG animation */
-    --contact-fill-0: #91a8ff;
-    --contact-fill-50: #7fa0ff;
-    --contact-fill-100: #bcd1ff;
+  /* Contact Section */
+  --contact-divider:      #334155;
+  --contact-header:       #60A5FA;
+  --contact-title:        #3B82F6;
+  --contact-subtitle:     #2563EB;
+  --input-bg:             #1E293B;
+  --input-text:           #F9FAFB;
+  --input-outline:        #60A5FA;
+  --submit-bg:            #2563EB;
+  --submit-text:          #FFFFFF;
 
-    /* Footer */
-    --footer-bg: #1b2437;
-    --footer-text: #e6ecff;
-    --footer-name: #7fa9ff;
-    --footer-subtitle: #c7d2fe;
-    --footer-icon-fill: #e6ecff;
+  /* SVG Animation */
+  --contact-fill-0:       #60A5FA;
+  --contact-fill-50:      #3B82F6;
+  --contact-fill-100:     #2563EB;
 
-    /* Nav + Theme toggle */
-    --navbar-text: #cbd5e1;
-    --navbar-active: #9bb6ff;
-    --theme-toggle-bg: #1e2a44;
-    --theme-toggle-icon: #cfe1ff;
+  /* Footer */
+  --footer-bg:            #1E293B;
+  --footer-text:          #F9FAFB;
+  --footer-name:          #60A5FA;
+  --footer-subtitle:      #3B82F6;
+  --footer-icon-fill:     #60A5FA;
+
+  /* Navbar & Theme Toggle */
+  --navbar-text:          #F9FAFB;
+  --navbar-active:        #60A5FA;
+  --theme-toggle-bg:      #475569;
+  --theme-toggle-icon:    #60A5FA;
 }
+
 @font-face{font-family:Poppins;src:url('./Poppins/Poppins-Regular.ttf') format('truetype');font-weight:400;font-style:normal}@font-face{font-family:Poppins;src:url('./Poppins/Poppins-Italic.ttf') format('truetype');font-weight:400;font-style:italic}@font-face{font-family:Poppins;src:url('./Poppins/Poppins-Bold.ttf') format('truetype');font-weight:700;font-style:normal}@font-face{font-family:Poppins;src:url('./Poppins/Poppins-BoldItalic.ttf') format('truetype');font-weight:700;font-style:italic}@font-face{font-family:Poppins;src:url('./Poppins/Poppins-Black.ttf') format('truetype');font-weight:900;font-style:normal}@font-face{font-family:Poppins;src:url('./Poppins/Poppins-BlackItalic.ttf') format('truetype');font-weight:900;font-style:italic}@font-face{font-family:Poppins;src:url('./Poppins/Poppins-ExtraBold.ttf') format('truetype');font-weight:800;font-style:normal}@font-face{font-family:Poppins;src:url('./Poppins/Poppins-ExtraBoldItalic.ttf') format('truetype');font-weight:800;font-style:italic}@font-face{font-family:Poppins;src:url('./Poppins/Poppins-SemiBold.ttf') format('truetype');font-weight:600;font-style:normal}@font-face{font-family:Poppins;src:url('./Poppins/Poppins-SemiBoldItalic.ttf') format('truetype');font-weight:600;font-style:italic}@font-face{font-family:Poppins;src:url('./Poppins/Poppins-Medium.ttf') format('truetype');font-weight:500;font-style:normal}@font-face{font-family:Poppins;src:url('./Poppins/Poppins-MediumItalic.ttf') format('truetype');font-weight:500;font-style:italic}@font-face{font-family:Poppins;src:url('./Poppins/Poppins-Light.ttf') format('truetype');font-weight:300;font-style:normal}@font-face{font-family:Poppins;src:url('./Poppins/Poppins-LightItalic.ttf') format('truetype');font-weight:300;font-style:italic}@font-face{font-family:Poppins;src:url('./Poppins/Poppins-ExtraLight.ttf') format('truetype');font-weight:200;font-style:normal}@font-face{font-family:Poppins;src:url('./Poppins/Poppins-ExtraLightItalic.ttf') format('truetype');font-weight:200;font-style:italic}@font-face{font-family:Poppins;src:url('./Poppins/Poppins-Thin.ttf') format('truetype');font-weight:100;font-style:normal}@font-face{font-family:Poppins;src:url('./Poppins/Poppins-ThinItalic.ttf') format('truetype');font-weight:100;font-style:italic}

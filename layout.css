@@ -24,16 +24,27 @@ body {
     overflow: hidden;
 }
 .home {
-    background-image: var(--bg-image-url);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    padding-left: clamp(20px, 6vw, 150px);
+    padding: clamp(20px, 6vw, 150px);
     font-size: clamp(1.2rem, 3.2vw, 3rem);
     display: flex;
     justify-content: center;
     flex-direction: column;
 }
+.home-bg, .mobile-home-bg {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+}
+.mobile-home-bg {display: none;}
+.peak1 {fill: var(--peak1);}
+.peak2 {fill: var(--peak2);}
+.peak3 {fill: var(--peak3);}
+.peak4 {fill: var(--peak4);}
+
 .intro-header {
     display: flex;
     flex-direction: column;
@@ -118,12 +129,12 @@ body {
         bottom: -2px;
         width: 0;
         height: 2px;
-        background-color: var(--projects-btn-border);
         transition: width 0.3s ease;
     }
     #projects-btn:hover {
         transform: translateY(-3px);
         color: var(--projects-btn-hover);
+        border-color: var(--projects-btn-hover);
     }
     #projects-btn:hover svg g path {
         stroke: var(--projects-btn-hover);
@@ -161,6 +172,10 @@ body {
 .react {background-color: #61DAFB; color: #000000;}
 .github {background-color: #181717; color: #FFFFFF;}
 
+.projects {
+    display: flex;
+    flex-direction: column;
+}
 .projects-title {
     padding-top: clamp(24px, 4vw, 50px);
     font-size: clamp(2.2rem, 6vw, 4rem);
@@ -168,7 +183,7 @@ body {
     color: var(--projects-title);
 }
 .project-list {
-    padding: clamp(20px, 5vw, 50px);
+    padding: clamp(20px, 6vw, 150px);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: clamp(16px, 3vw, 30px);
@@ -178,6 +193,9 @@ body {
     padding: 20px;
     border-radius: 7px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 .project-title {
     font-size: clamp(1.25rem, 3.2vw, 2rem);
@@ -188,11 +206,11 @@ body {
     font-size: clamp(1rem, 2.6vw, 1.4rem);
 }
 .project-tech {
-    margin-top: 10px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 10px;
+    margin-bottom: 20px;
 }
 .tech-item {
     padding: 5px 10px;
@@ -200,7 +218,7 @@ body {
     font-size: clamp(0.85rem, 2.2vw, 1rem);
 }
 .github-link {
-    margin-top: 20px;
+    margin-top: auto;
     display: inline-block;
     color: var(--github-link);
     cursor: pointer;
@@ -210,6 +228,10 @@ body {
     transform: translateY(-3px);
 }
 
+.contact {
+    display: flex;
+    flex-direction: column;
+}
 .contact-header {
     padding-top: clamp(40px, 6vw, 80px);
     display: flex;
@@ -228,15 +250,17 @@ body {
     color: var(--contact-header);
 }
 .contact-wrapper {
+    margin-top: auto;
+    margin-bottom: auto;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
     align-items: center;
-    gap: clamp(32px, 8vw, 350px);
+    flex-direction: row;
+    padding: clamp(20px, 6vw, 150px);
+    padding-top: 0;
+    padding-bottom: 0;
 }
 .contact-title {
     font-size: clamp(1.5rem, 5.5vw, 3.5rem);
-    margin-top: clamp(20px, 8vw, 100px);
     color: var(--contact-title);
 }
 .contact-subtitle {
@@ -278,8 +302,8 @@ body {
     box-sizing: border-box;
 }
 .contact-svg {
+    margin-left: auto;
     width: min(650px, 100%);
-    max-width: 100%;
     height: auto;
 }
 .contact-svg path {
@@ -293,8 +317,7 @@ body {
 }
 
 .footer {
-    position: absolute;
-    bottom: 0;
+    margin-top: auto;
     width: 100%;
     background-color: var(--footer-bg);
     padding: clamp(14px, 3vw, 20px) 0;
@@ -320,8 +343,10 @@ body {
 .footer .icon svg {
     width: clamp(22px, 3.5vw, 30px);
     height: clamp(22px, 3.5vw, 30px);
-    fill: var(--footer-icon-fill);
     transition: transform 0.3s ease;
+}
+.footer .icon svg path {
+    fill: var(--footer-icon-fill);
 }
 .footer .icon:hover svg {
     transform: scale(1.15);
