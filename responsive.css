@@ -17,10 +17,10 @@
     font-size: clamp(1.05rem, 2.2vw, 1.8rem);
   }
 
-  .projects, .project-list {
+  .projects, .project-slider {
     padding: 12.5px;
   }
-  .project-list {
+  .project-slider {
     margin-top: auto;
     margin-bottom: auto;
     display: flex;
@@ -35,10 +35,12 @@
     min-width: calc(50% - 50px);
     scroll-snap-align: start;
     scroll-snap-stop: always;
-  }
-  .project-tech {flex-direction: column;
+
   }
   .contact-svg {display: none;}
+  .controls, .indicators {
+    display: none;
+  }
 }
 
 /* <= 992px (tablets) */
@@ -57,8 +59,8 @@
 /* <= 768px (large phones / small tablets) */
 @media (max-width: 768px){
   .about, .home, .contact-wrapper, .topbar{padding: 20px;}
-  .projects, .project-list {padding: 10px;}
-  .project-list {scroll-padding: 10px;}
+  .projects, .project-slider {padding: 10px;}
+  .project-slider {scroll-padding: 10px;}
   .project-container {min-width: calc(100% - 40px);}
 
   .navbar {

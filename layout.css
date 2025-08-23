@@ -2,6 +2,10 @@
     margin: 0;
     padding: 0;
     font-family: 'Poppins', Arial, sans-serif;
+    box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
 }
 body {
     background-color: var(--page-bg);
@@ -58,7 +62,8 @@ body {
     display: flex;
     gap: clamp(10px, 2.5vw, 20px);
 }
-.intro-buttons button{
+.intro-buttons a {
+    text-decoration: none;
     font-size: clamp(1rem, 2.5vw, 1.5rem);
     padding: clamp(8px, 1.8vw, 12px) clamp(12px, 2.2vw, 16px);
     border: none;
@@ -172,30 +177,75 @@ body {
 .react {background-color: #61DAFB; color: #000000;}
 .github {background-color: #181717; color: #FFFFFF;}
 
+/* Variables */
+#projectSlider {
+  --visible: 3;
+  --pad: 20px;
+  --gap: 30px;
+}
+
+/* Responsive visible count */
+@media (max-width: 900px) { #projectSlider { --visible: 2; } }
+@media (max-width: 600px) { #projectSlider { --visible: 1; } }
+
 .projects {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  padding: calc(clamp(20px, 6vw, 150px) - 20px);
 }
+
 .projects-title {
-    padding-top: clamp(24px, 4vw, 50px);
-    font-size: clamp(2.2rem, 6vw, 4rem);
-    text-align: center;
-    color: var(--projects-title);
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  text-align: center;
+  color: var(--projects-title);
 }
-.project-list {
-    padding: clamp(20px, 6vw, 150px);
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: clamp(16px, 3vw, 30px);
+
+/* Track */
+.project-slider {
+    margin-top: 20px;
+    display: flex;
+    gap: 30px;
+    padding: var(--pad);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scroll-padding: var(--pad);
+    -webkit-overflow-scrolling: touch;
+    box-sizing: border-box;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.project-slider::-webkit-scrollbar { display: none; }
+.project-slider::after {
+  content: "";
+  flex: 0 0 var(--pad);
 }
 .project-container {
+    flex: 0 0 calc((100% - (var(--gap) * (var(--visible) - 1))) / var(--visible));
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    box-sizing: border-box;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     background-color: var(--card-bg);
     padding: 20px;
-    border-radius: 7px;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+.mockup-container {
+    width: 100%;
+    height: auto;
+    background-color: #F5F5F5;
+    border-radius: 10px;
+    display: flex;
+    padding: 10px auto 10px auto;
+}
+.mockup {
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    height: 300px;
 }
 .project-title {
     font-size: clamp(1.25rem, 3.2vw, 2rem);
@@ -227,6 +277,46 @@ body {
 .github-link:hover {
     transform: translateY(-3px);
 }
+.controls {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.controls svg {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 999px;
+    padding: 6px;
+    outline: none;
+    transition: transform 120ms ease, background-color 120ms ease;
+}
+.controls svg:hover { transform: scale(1.04); background: rgba(0,0,0,0.06); }
+.controls .disabled svg { opacity: 0.35; pointer-events: none; }
+#indicators {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+#indicators button {
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    border: 0;
+    background: #d0d5dd;
+    cursor: pointer;
+}
+#indicators button[aria-selected="true"] {
+    width: 18px;
+    background: #111827;
+}
 
 .contact {
     display: flex;
@@ -237,14 +327,14 @@ body {
     display: flex;
     flex-direction: row;
 }
-.contact-header div {
+.contact-divider {
     margin-top: auto;
     margin-bottom: auto;
     background-color: var(--contact-divider);
     width: clamp(120px, 24vw, 250px);
     height: clamp(6px, 1.2vw, 10px);
 }
-.contact-header h1 {
+.contact-heading {
     margin-left: clamp(12px, 2vw, 20px);
     font-size: clamp(1.6rem, 5vw, 3rem);
     color: var(--contact-header);
@@ -301,6 +391,41 @@ body {
     font: inherit;
     box-sizing: border-box;
 }
+.social {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 2;
+    gap: 10px;
+}
+.social-link {
+    text-decoration: none;
+    display: flex;
+    gap: 10px;
+}
+.social-link svg {
+    width: clamp(22px, 3.5vw, 30px);
+    height: clamp(22px, 3.5vw, 30px);
+}
+.social-link svg path {
+    fill: var(--contact-subtitle);
+    transition: fill 0.3s ease;
+}
+.social-link span {
+    margin-top: auto;
+    margin-bottom: auto;
+    color: var(--contact-subtitle);
+    transition: color 0.3s ease;
+}
+@media (hover: hover) and (pointer: fine) {
+    .social-link:hover {
+        svg path {
+            fill: var(--footer-icon-fill);
+        }
+        span {
+            color: var(--footer-icon-fill);
+        }
+    }
+}
 .contact-svg {
     margin-left: auto;
     width: min(650px, 100%);
@@ -317,7 +442,6 @@ body {
 }
 
 .footer {
-    margin-top: auto;
     width: 100%;
     background-color: var(--footer-bg);
     padding: clamp(14px, 3vw, 20px) 0;
@@ -333,7 +457,7 @@ body {
     color: var(--footer-subtitle);
     font-size: clamp(12px, 1.8vw, 14px);
 }
-.footer .social-links {
+.footer .social-icons {
     margin-top: 15px;
 }
 .footer .icon {
@@ -355,7 +479,7 @@ body {
 .topbar {
     position: fixed;
     padding: clamp(12px, 2.5vw, 20px) clamp(14px, 3vw, 30px);
-    font-size: clamp(1rem, 2.2vw, 1.5rem);
+    font-size: 1.7rem;
     z-index: 10;
     display: flex;
     flex-direction: row;
@@ -364,17 +488,22 @@ body {
     display: flex;
     flex-direction: row;
     gap: clamp(12px, 3vw, 30px);
+}
+.nav-link {
     color: var(--navbar-text);
-}
-.navbar p {
-    transition: all 0.3s ease;
+    text-decoration: none;
     transform-origin: center;
+    transition: color 0.4s ease, transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), font-weight 0.4s ease;
 }
-.navbar p.active {
+
+.nav-link.active {
+    font-weight: bold;
     color: var(--navbar-active);
     transform: scale(1.1);
 }
+
 .theme-toggle {
+    box-sizing: content-box;
     position: fixed;
     right: clamp(12px, 4vw, 50px);
     background-color: var(--theme-toggle-bg);

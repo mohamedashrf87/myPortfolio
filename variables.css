@@ -1,35 +1,31 @@
 :root {
-  --page-bg:           #F9FAFB;   /* clean, modern background */
+  --page-bg:           #F9FAFB;
   --peak1:             #F1F3F5;
   --peak2:             #E9ECEF;
   --peak3:             #DEE2E6;
   --peak4:             #ADB5BD;
-  
-  --paragraph:         #212529;   /* strong, clear readability */
+
+  --paragraph:         #212529;
   --placeholder:       #6C757D;
   --mobile-menu-bg:    #F1F3F5;
 
-  /* Buttons & Highlights (Blue Palette) */
-  --intro-name-accent:       #2563EB;  /* confident vivid blue */
+  --intro-name-accent:       #2563EB;
   --btn-text:                #FFFFFF;
-  --about-me-btn-bg:         #2563EB;  /* solid base blue */
-  --about-me-btn-bg-hover:   #1E40AF;  /* bold darker hover */
-  --contact-btn-bg:          #3B82F6;  /* lighter accent blue */
+  --about-me-btn-bg:         #2563EB;
+  --about-me-btn-bg-hover:   #1E40AF;
+  --contact-btn-bg:          #3B82F6;
   --contact-btn-bg-hover:    #2563EB;
 
-  /* Section Titles & CTAs */
   --about-title:             #2563EB;
   --projects-btn-text:       #212529;
   --projects-btn-hover:      #1E40AF;
   --skills-title:            #3B82F6;
 
-  /* Projects Section */
   --projects-title:          #2563EB;
   --card-bg:                 #FFFFFF;
   --project-title:           #212529;
   --github-link:             #2563EB;
 
-  /* Contact Section */
   --contact-divider:         #E9ECEF;
   --contact-header:          #2563EB;
   --contact-title:           #1E40AF;
@@ -40,19 +36,17 @@
   --submit-bg:               #2563EB;
   --submit-text:             #FFFFFF;
 
-  /* SVG Animation */
   --contact-fill-0:          #2563EB;
   --contact-fill-50:         #3B82F6;
   --contact-fill-100:        #60A5FA;
 
-  /* Footer */
   --footer-bg:               #F1F3F5;
   --footer-text:             #212529;
   --footer-name:             #2563EB;
   --footer-subtitle:         #3B82F6;
   --footer-icon-fill:        #2563EB;
 
-  /* Navbar & Theme Toggle */
+
   --navbar-text:             #212529;
   --navbar-active:           #2563EB;
   --theme-toggle-bg:         #E9ECEF;
