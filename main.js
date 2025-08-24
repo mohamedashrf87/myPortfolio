@@ -34,18 +34,19 @@ function setActive(navId) {
 const sections = document.querySelectorAll(".content");
 const navLinks = document.querySelectorAll(".nav-link");
 
-// Create an observer
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
-      const id = entry.target.getAttribute("id");
-      const navLink = document.querySelector(`.nav-link[href="#${id}"]`);
-
       if (entry.isIntersecting) {
-        // Remove .active from all
-        navLinks.forEach((link) => link.classList.remove("active"));
-        // Add .active to the current one
-        navLink.classList.add("active");
+        const id = entry.target.getAttribute("id");
+
+        // 🔹 Update hash in the URL (without page jump)
+        history.replaceState(null, null, `#${id}`);
+
+        // 🔹 Update nav link active class
+        navLinks.forEach((link) => {
+          link.classList.toggle("active", link.getAttribute("href") === `#${id}`);
+        });
       }
     });
   },
