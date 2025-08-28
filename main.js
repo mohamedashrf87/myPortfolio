@@ -75,8 +75,8 @@ if (exitMenu) {
 }
 
 const blob = document.querySelector("#blobPath");
-const shape1 = "M50.4,-65.1C59.7,-52.3,57.7,-31.1,61.1,-10.9C64.5,9.2,73.3,28.3,69.4,44.9C65.6,61.4,49.1,75.5,31.7,77.7C14.3,79.9,-3.9,70.3,-16.7,59.7C-29.6,49.1,-37,37.4,-46.1,25C-55.2,12.6,-65.9,-0.5,-66.5,-14.2C-67,-27.9,-57.3,-42.4,-44.6,-54.5C-31.8,-66.7,-15.9,-76.6,2.3,-79.4C20.6,-82.2,41.1,-77.8,50.4,-65.1Z";
-const shape2 = "M43.7,-51.5C58.1,-40,72.2,-27.6,73.6,-13.8C75,0,63.8,15.2,54,30.2C44.1,45.3,35.8,60.2,22.7,67.1C9.6,74,-8.2,72.7,-26.1,67.9C-44,63.1,-62,54.6,-73.8,39.9C-85.7,25.1,-91.3,4,-86.6,-14.1C-82,-32.1,-67.1,-47.2,-51,-58.4C-34.8,-69.5,-17.4,-76.8,-1.4,-75.1C14.7,-73.5,29.3,-62.9,43.7,-51.5Z";
+const shape1 = "M38.8,-67.3C49.8,-60.9,57.8,-49.4,64.4,-37.4C71,-25.3,76.2,-12.7,77.9,1C79.6,14.6,77.9,29.3,71.1,41.1C64.4,52.9,52.6,61.8,39.9,65.3C27.2,68.7,13.6,66.6,0.4,65.9C-12.8,65.2,-25.7,66,-37.1,61.9C-48.6,57.7,-58.6,48.7,-65.5,37.6C-72.4,26.4,-76.2,13.2,-76.8,-0.4C-77.5,-14,-75.1,-28,-67.7,-38.3C-60.4,-48.6,-48,-55.3,-35.9,-61C-23.8,-66.8,-11.9,-71.7,1,-73.4C13.9,-75.2,27.9,-73.8,38.8,-67.3Z";
+const shape2 = "M31.8,-54.2C42.4,-49,52.9,-42.8,62.4,-33.6C71.8,-24.4,80.3,-12.2,79.3,-0.6C78.3,11.1,68,22.2,59.9,33.7C51.7,45.3,45.9,57.3,36.3,68C26.7,78.8,13.3,88.2,1.4,85.8C-10.5,83.3,-21,69,-30.9,58.4C-40.8,47.8,-50,41,-59,31.9C-68.1,22.8,-76.9,11.4,-80.9,-2.3C-84.9,-16,-84.1,-32,-75.5,-41.9C-66.9,-51.7,-50.5,-55.4,-36.6,-58.6C-22.7,-61.9,-11.4,-64.8,-0.4,-64.1C10.6,-63.5,21.2,-59.3,31.8,-54.2Z";
 function animateBlob() {
   gsap.to(blob, {
     duration: 5,
@@ -103,10 +103,11 @@ const next = document.getElementById('nextBtn');
 const indicators = document.getElementById('indicators');
 
 let index = 0;
-const visible = 3;
+const sliderStyle = getComputedStyle(slider);
+const visible = parseInt(sliderStyle.getPropertyValue('--visible')) || 1;
+
 const pages = Math.max(1, slides.length - visible + 1);
 
-// Build dots
 for (let i = 0; i < pages; i++) {
   const dot = document.createElement('button');
   dot.addEventListener('click', () => goTo(i));
@@ -114,19 +115,34 @@ for (let i = 0; i < pages; i++) {
 }
 
 function updateUI() {
-  // update dots
   [...indicators.children].forEach((dot, i) => {
     dot.setAttribute('aria-selected', i === index);
     dot.disabled = i === index;
   });
 }
 
+let isProgrammaticScroll = false;
+
 function goTo(i) {
   index = Math.max(0, Math.min(i, pages - 1));
   const slideWidth = slides[0].offsetWidth + parseFloat(getComputedStyle(slider).gap || 0);
+  isProgrammaticScroll = true;
   slider.scrollTo({ left: index * slideWidth, behavior: 'smooth' });
   updateUI();
+  setTimeout(() => {
+    isProgrammaticScroll = false;
+  }, 500);
 }
+
+slider.addEventListener('scroll', () => {
+  if (isProgrammaticScroll) return;
+  const slideWidth = slides[0].offsetWidth + parseFloat(getComputedStyle(slider).gap || 0);
+  const scrolledIndex = Math.round(slider.scrollLeft / slideWidth);
+  if (scrolledIndex !== index) {
+    index = scrolledIndex;
+    updateUI();
+  }
+});
 
 prev.addEventListener('click', () => goTo(index - 1));
 next.addEventListener('click', () => goTo(index + 1));
